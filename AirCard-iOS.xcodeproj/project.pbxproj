@@ -294,8 +294,8 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-lc++";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mak5er.aircard;
-				PRODUCT_NAME = "AirCard-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NVD.aircard;
+				PRODUCT_NAME = "NVD AirCard";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -442,10 +442,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mak5er.aircard.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NVD.aircard.tests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirCard-iOS.app/AirCard-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NVD AirCard.app/NVD AirCard";
 			};
 			name = Release;
 		};
@@ -459,10 +459,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mak5er.aircard.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NVD.aircard.tests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AirCard-iOS.app/AirCard-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NVD AirCard.app/NVD AirCard";
 			};
 			name = Debug;
 		};
@@ -482,8 +482,8 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-lc++";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mak5er.aircard;
-				PRODUCT_NAME = "AirCard-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NVD.aircard;
+				PRODUCT_NAME = "NVD AirCard";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
