@@ -17,3 +17,9 @@ AirliftFFI.xcframework/
 *.ipa
 DerivedData/
 .serena/
+
+# NVD fork: .xcodeproj va xcframework DUOC commit (giong repo goc, da force-add)
+# Neu khong co 2 dong nay, `git add .` se bo qua project.pbxproj + xcframework
+# (repo goc bi .gitignore chan nhung file da duoc force-add tu truoc).
+!AirCard-iOS.xcodeproj/
+!AirliftFFI.xcframework/

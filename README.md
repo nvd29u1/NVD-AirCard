@@ -1,7 +1,11 @@
+# NVD AirCard
+
+> **Bản cá nhân hoá NVD** từ [AirCard-iOS](https://github.com/Mak5er/AirCard-iOS) của [@mak5er](https://github.com/mak5er) (giấy phép MIT). Đổi tên/bundle ID/icon/giao diện sang thương hiệu NVD; mọi tính năng và ghi công tác giả gốc được giữ nguyên.
+
 # AirCard-iOS
 
 <p align="center">
-  <img src="ios-app/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="128" height="128" alt="AirCard-iOS Icon" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.18);" />
+  <img src="ios-app/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="128" height="128" alt="NVD AirCard Icon" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.18);" />
 </p>
 
 <p align="center">
@@ -18,7 +22,7 @@
 
 ## Overview
 
-AirCard-iOS customizes Apple Wallet card artwork, lock screen passcode dialers, and lock screen wallpapers on device without a jailbreak.
+NVD AirCard customizes Apple Wallet card artwork, lock screen passcode dialers, and lock screen wallpapers on device without a jailbreak.
 
 The app communicates with internal system services over a local loopback tunnel (`10.7.0.1` or `127.0.0.1`) provided by LocalDevVPN. File operations are handled by `AirliftFFI`, a Rust library that interfaces with the AirTraffic service.
 
@@ -57,7 +61,7 @@ The app communicates with internal system services over a local loopback tunnel 
 
 ### Pairing options
 - **Import pairing file**: Supports pairing files (`.mobiledevicepairing`, `.plist`, `.mobilepair`) from **SideStore**, **LiveContainer**, **iLoader**, **AltStore**, **Jitterbug**, or exported from Mac/PC.
-- **On-device pairing (iOS 27+)**: Advertises locally over Bonjour so the phone can pair with itself via Settings > Privacy & Security > Developer Mode > Pair with AirCard-iOS.
+- **On-device pairing (iOS 27+)**: Advertises locally over Bonjour so the phone can pair with itself via Settings > Privacy & Security > Developer Mode > Pair with NVD AirCard.
 - **Safe unpairing**: Easily delete the active pairing file to re-pair or switch pairing credentials at any time.
 
 ## Prerequisites
@@ -68,11 +72,11 @@ The app communicates with internal system services over a local loopback tunnel 
 
 ## Pairing Setup Guide
 
-AirCard-iOS requires a pairing record to communicate with device lockdown services. Choose the method that best matches your setup:
+NVD AirCard requires a pairing record to communicate with device lockdown services. Choose the method that best matches your setup:
 
 ### Option A: SideStore (Recommended)
 If you already use SideStore on your device, it has already created a valid pairing file:
-1. Open **AirCard-iOS** and go to the **Pairing** tab.
+1. Open **NVD AirCard** and go to the **Pairing** tab.
 2. Tap **Import Pairing File…**.
 3. In the Files document picker, navigate to:
    ```text
@@ -82,7 +86,7 @@ If you already use SideStore on your device, it has already created a valid pair
 
 ### Option B: LiveContainer (with SideStore inside)
 If you run SideStore inside LiveContainer:
-1. Open **AirCard-iOS** › **Pairing** tab › tap **Import Pairing File…**.
+1. Open **NVD AirCard** › **Pairing** tab › tap **Import Pairing File…**.
 2. In the Files document picker, navigate to:
    ```text
    On My iPhone › LiveContainer › SideStore › Documents › ALTPairingFile.mobiledevicepairing
@@ -91,20 +95,20 @@ If you run SideStore inside LiveContainer:
 3. Select `ALTPairingFile.mobiledevicepairing`.
 
 ### Option C: iLoader / Jitterbug / AltStore / Computer
-- **iLoader / Jitterbug**: In the respective app, export your pairing file (`<UDID>.mobiledevicepairing`) into the Files app, then import it in AirCard-iOS.
-- **Mac / PC**: Generate a pairing record using `jitterbugpair`, `pymobiledevice3`, or copy it from your computer (`/var/db/lockdown/<UDID>.plist` on macOS or `%ProgramData%\Apple\Lockdown\<UDID>.plist` on Windows), AirDrop/transfer it to your device, and import it into AirCard-iOS.
-- **Manual placement**: You can also drop any `.mobiledevicepairing` or `.plist` directly into `On My iPhone › AirCard-iOS` via the Files app; it will appear under *Discovered in Documents* ready to use.
+- **iLoader / Jitterbug**: In the respective app, export your pairing file (`<UDID>.mobiledevicepairing`) into the Files app, then import it in NVD AirCard.
+- **Mac / PC**: Generate a pairing record using `jitterbugpair`, `pymobiledevice3`, or copy it from your computer (`/var/db/lockdown/<UDID>.plist` on macOS or `%ProgramData%\Apple\Lockdown\<UDID>.plist` on Windows), AirDrop/transfer it to your device, and import it into NVD AirCard.
+- **Manual placement**: You can also drop any `.mobiledevicepairing` or `.plist` directly into `On My iPhone › NVD AirCard` via the Files app; it will appear under *Discovered in Documents* ready to use.
 
 ### Option D: On-Device Pairing (iOS 27+ only)
 On devices running iOS 27 or newer:
 1. In the **Pairing** tab, tap **Pair This iPhone**.
 2. Note the 6-digit PIN displayed on screen.
-3. Open **Settings › Privacy & Security › Developer Mode › Pair with AirCard-iOS**.
-4. Enter the PIN to approve the pairing. AirCard-iOS will complete the handshake and save the credentials.
+3. Open **Settings › Privacy & Security › Developer Mode › Pair with NVD AirCard**.
+4. Enter the PIN to approve the pairing. NVD AirCard will complete the handshake and save the credentials.
 
 ## Installation
 
-Install `AirCard-iOS.ipa` using your preferred sideloading method:
+Install `NVD-AirCard.ipa` using your preferred sideloading method:
 
 - SideStore or AltStore
 - TrollStore
@@ -125,7 +129,7 @@ cd AirCard-iOS
 ./build-ipa.sh
 ```
 
-The completed package is written to `build/AirCard-iOS.ipa`.
+The completed package is written to `build/NVD-AirCard.ipa`.
 
 ### Rebuilding the Rust framework
 To compile changes in `rust-core`:
