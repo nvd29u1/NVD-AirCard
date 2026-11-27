@@ -186,3 +186,51 @@ If you want to support AirCard-iOS development by **[@mak5er](https://github.com
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+# Tiếng Việt
+
+> **NVD AirCard** là bản cá nhân hoá NVD từ [AirCard-iOS](https://github.com/Mak5er/AirCard-iOS) của [@mak5er](https://github.com/mak5er) (giấy phép MIT). Đổi tên, bundle ID (`com.NVD.aircard`), icon và giao diện sang thương hiệu NVD; mọi tính năng và ghi công tác giả gốc được giữ nguyên.
+
+## Mô tả
+
+NVD AirCard đổi giao diện iPhone ngay trên máy, không cần jailbreak:
+
+- **Đổi ảnh thẻ Apple Wallet** — thay artwork của thẻ trong Wallet (ghi vào Passbook caches, làm mới cache để hiện ngay khi mở Wallet).
+- **Theme bàn phím passcode** — đổi giao diện bàn phím màn hình khoá, import/export theme dạng file `.passthm`.
+- **Hình nền PosterBoard (.tendies)** — flash file `.tendies` vào PosterBoard, tự respring bằng NeoSpring (không cần khởi động lại máy).
+
+Ứng dụng giao tiếp với dịch vụ hệ thống qua tunnel loopback nội bộ (`10.7.0.1` hoặc `127.0.0.1`) do app LocalDevVPN cung cấp; thao tác file do thư viện Rust `AirliftFFI` đảm nhiệm qua dịch vụ AirTraffic.
+
+## Cài đặt
+
+1. Tải file `NVD-AirCard-1.3.3.ipa` (bản cuối) trong mục Releases của repo này.
+2. Cài bằng chứng chỉ cá nhân qua một trong các cách sau:
+   - **SideStore** hoặc **AltStore**
+   - **TrollStore**
+   - **LiveContainer**
+   - Xcode hoặc iOS App Signer
+3. Cần **app LocalDevVPN** (trên App Store) chạy ở chế độ loopback.
+4. Cần **pairing file** để app kết nối dịch vụ lockdown của máy — lấy từ SideStore (`ALTPairingFile.mobiledevicepairing`), LiveContainer, AltStore, iLoader, Jitterbug, hoặc xuất từ Mac/PC. Trên iOS 27+ có thể pairing trực tiếp trên máy: Cài đặt › Quyền riêng tư & Bảo mật › Chế độ nhà phát triển › Ghép đôi với NVD AirCard, nhập mã PIN 6 số hiện trên app.
+
+## Cách dùng cơ bản
+
+1. Mở **LocalDevVPN**, bật chế độ loopback.
+2. Mở **NVD AirCard** › tab **Pairing**: import pairing file, hoặc bấm **Pair This iPhone** (iOS 27+) rồi nhập PIN trong Cài đặt.
+3. Chọn tính năng muốn dùng:
+   - **Wallet**: mở Apple Pay để app nhận diện thẻ theo thời gian thực, chọn thẻ rồi áp artwork mới.
+   - **Passcode**: xem trước theme bàn phím trực tiếp, chỉnh khung hình rồi áp theme (hoặc import file `.passthm`).
+   - **Tendies**: import file `.tendies` từ app Tệp, app tự flash vào PosterBoard và respring để áp hình nền.
+
+## Hỗ trợ iOS
+
+| Phiên bản iOS | Trạng thái |
+| :--- | :--- |
+| iOS 18.0 – 26.x | ✅ Hỗ trợ (chỉ pairing file import) |
+| iOS 27.0 – 27.0.1 | ✅ Hỗ trợ (pairing trên máy hoặc import file) |
+| iOS 27.2 beta 1 – beta 2 | ✅ Hỗ trợ |
+| iOS 27.2 beta 3 trở lên | ❌ Không hỗ trợ |
+
+> [!IMPORTANT]
+> **Đừng cập nhật quá iOS 27.2 beta 2:** Apple đã vá lỗ hổng Airlift (AirTraffic sync exploit) từ iOS 27.2 beta 3, nên từ bản đó trở đi app không chèn file được nữa.
